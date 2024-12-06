@@ -1,0 +1,5 @@
+node_modules/
+logs/
+uploads/
+db/fileLog.json
+db/user.json
