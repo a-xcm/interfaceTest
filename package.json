@@ -14,7 +14,11 @@
     "start": "nodemon app.js",
     "test": ""
   },
-  "keywords": [],
+  "keywords": [
+    "node",
+    "express",
+    "mysql"
+  ],
   "author": "",
   "license": "ISC",
   "description": ""
