@@ -24,6 +24,5 @@ const executeQuery = (sql, values) => {
 }
  
 module.exports = {
-  pool,
   executeQuery,
 }

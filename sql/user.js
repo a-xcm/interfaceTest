@@ -9,6 +9,9 @@ const SELECT_BY_USERNAME_LIKE = `SELECT * FROM user WHERE username LIKE ?`
 const SELECT_ALL = `SELECT * FROM user `
 //分页
 const SELECT_LIMIT = `SELECT * FROM user limit ?,?`
+//查询总条数 总页数
+const SELECT_COUNT = `SELECT count(*) as count FROM user`
+
 //新增
 const INSERT_USER = `INSERT INTO user (username, age) VALUES (?, ?)`
 //更新
@@ -23,6 +26,7 @@ module.exports = {
     SELECT_BY_USERNAME_LIKE,
     SELECT_ALL,
     SELECT_LIMIT,
+    SELECT_COUNT,
     INSERT_USER,
     UPDATE_BY_ID,
     DELETE_BY_ID
