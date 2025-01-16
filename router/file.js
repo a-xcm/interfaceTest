@@ -192,4 +192,27 @@ router.get("/preview",async (req, res) => {
  
 });
 
+//直接打开文件
+router.get("/open/:filename",async (req, res) => {
+  try {
+    // /open/file.name
+    // 文件名
+    const filename = req.params.filename;
+    if(!filename){
+      writeLog(`文件名不能为空`,req);
+      return resFun(res,"fail",null,'文件名不能为空')
+    }
+    const filePath = path.join(__dirname, "../uploads", filename);
+    if(!spFile.isFileExists(filePath)){
+      writeLog(`文件不存在`,req);
+      return resFun(res,"fail",null,'文件不存在')
+    }
+    res.setHeader('Content-Type', 'application/octet-stream');
+    // 返回文件流
+    res.sendFile(filePath);
+
+  } catch (error) {
+  }
+ 
+});
 module.exports = router;
